@@ -178,6 +178,8 @@ def main():
             get_recording_counts(sys.argv[2])
         except IndexError:
             print(f'Action: {action}, requires a recording name input.')
+    elif action == 'get_recorded_episodes':
+        get_recorded_episodes()
     else:
         print(f'Action: {action}, is not implemented.')
 
