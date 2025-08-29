@@ -52,8 +52,7 @@ def get_recorded_episodes(title):
             episodes = requests.get(recording['EpisodesURL']).json()
         
             for episode in episodes:
-                try:
-                    full_episode_number = episode['EpisodeNumber']
+                full_episode_number = episode['EpisodeNumber']
 
     for episode in unique_episodes:
         print('"' + episode + '"')
