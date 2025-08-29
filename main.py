@@ -54,7 +54,7 @@ def get_recorded_episodes(title):
             for episode in episodes:
                 full_episode_number = episode['EpisodeNumber']
 
-    for episode in unique_episodes:
+    for episode in episodes:
         print('"' + episode + '"')
             
 
