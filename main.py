@@ -47,8 +47,7 @@ def get_recorded_episodes(title):
     for recording in all_recorded_file_info:
         if recording['Title'] == title:
             unique_recordings.add(recording['Title'])
-            for episode_name in unique_recordings
-                
+            for episode_name in unique_recordings:
                 full_episode_number = episode['EpisodeNumber']
                 print('"' + full_episode_number + '"')
 
