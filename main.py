@@ -49,7 +49,7 @@ def get_recorded_episodes(title):
             unique_recordings.add(recording['EpisodesURL']).json()
 
     for recording_name in unique_recordings:
-    print('"' + recording_name + '"')
+        print('"' + recording_name + '"')
             
 
 def get_recording_counts(title):
