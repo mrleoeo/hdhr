@@ -45,11 +45,11 @@ def get_recorded_episodes(title):
     unique_recordings = set()
 
     for recording in all_recorded_file_info:
-
-            unique_recordings.add(recording['Title'])
+        if recording['Title'] == title:
+        unique_recordings.add(recording['Title'])
             for episode_name in unique_recordings:
                 full_episode_number = episode['EpisodeNumber']
-                print('"' + full_episode_number + '"')
+                print('"' + recording_name + '"')
 
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
