@@ -42,11 +42,18 @@ def delete_recording(title):
 def get_recorded_episodes(title):
     all_recorded_file_info = requests.get(f'http://{url}/recorded_files.json').json()
 
-    unique_episodes = set()
+    episodes = requests.get(recording['EpisodesURL']).json()
 
-    for recording in all_recorded_file_info:
+    for recording in recordings:
         if recording['Title'] == title:
-            unique_episodes = requests.get(recording['EpisodesURL']).json()
+            if recording['Category'] != 'series':
+                break
+                
+            episodes = requests.get(recording['EpisodesURL']).json()
+        
+            for episode in episodes:
+                try:
+                    full_episode_number = episode['EpisodeNumber']
 
     for episode in unique_episodes:
         print('"' + episode + '"')
