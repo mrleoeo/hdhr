@@ -44,8 +44,6 @@ def get_recorded_episodes(title):
 
     for recording in all_recorded_file_info:
         if recording['Title'] == title:
-            if recording['Category'] != 'series':
-                break
                 
             episodes = requests.get(recording['EpisodesURL']).json()
         
