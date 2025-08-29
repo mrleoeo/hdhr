@@ -46,7 +46,7 @@ def get_recorded_episodes(title):
 
     for recording in all_recorded_file_info:
         if recording['Title'] == title:
-            unique_recordings.add(recording['EpisodesURL']).json()
+            unique_episodes = requests.get(recording['EpisodesURL']).json()
 
     for episode in unique_episodes:
         print('"' + episode + '"')
