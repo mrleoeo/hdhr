@@ -169,7 +169,7 @@ def main():
         try:
             delete_recording(sys.argv[2])
         except IndexError:
-            print(f'Action: {action}, requires a recording name input.')
+            print(f'Action: {action} sys.argv[2], requires a recording name input.')
     elif action == 'get_recorded_episodes':
         try:
             get_recorded_episodes(sys.argv[2])
