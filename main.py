@@ -170,6 +170,11 @@ def main():
             delete_recording(sys.argv[2])
         except IndexError:
             print(f'Action: {action}, requires a recording name input.')
+    elif action == 'get_recorded_episodes':
+        try:
+            get_recorded_episodes(sys.argv[2])
+        except IndexError:
+            print(f'Action: {action}, requires a recording name input.')
     elif action == 'get_storage_details':
         get_storage_details()
     elif action == 'get_capacity_info':
@@ -177,11 +182,6 @@ def main():
     elif action == 'get_recording_counts':
         try:
             get_recording_counts(sys.argv[2])
-        except IndexError:
-            print(f'Action: {action}, requires a recording name input.')
-    elif action == 'get_recorded_episodes':
-        try:
-            get_recorded_episodes(sys.argv[2])
         except IndexError:
             print(f'Action: {action}, requires a recording name input.')
     else:
