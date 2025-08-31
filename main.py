@@ -59,11 +59,11 @@ def delete_recorded_episodes(title):
     for recording in all_recorded_file_info:
         if recording['EpisodeNumber'] == title:
             return {
-                print(Episode found)
+                print('Episode found')
             }
         else:
             return {
-                print(No episode found)
+                print('No episode found')
             }
 
 def get_recording_counts(title):
