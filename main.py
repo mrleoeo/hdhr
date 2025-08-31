@@ -65,6 +65,10 @@ def delete_recorded_episodes(title):
             return {
                 print(f'No episode found')
             }
+        
+    return {
+        print(f'No episode found')
+    }
 
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
