@@ -57,7 +57,7 @@ def delete_recorded_episodes(title):
     all_recorded_file_info = requests.get(f'http://{url}/recorded_files.json').json()
 
     for recording in all_recorded_file_info:
-        for episode in requests.get(recording['EpisodeNumber']).json():
+        for episode in requests.get(recording['EpisodesURL']).json():
             if episode['EpisodeNumber'] == title:
                 print('Episode found')
             #else:
