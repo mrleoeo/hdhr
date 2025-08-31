@@ -67,7 +67,7 @@ def delete_recorded_episodes(title):
             }
         
     return {
-        print(f'No episode found')
+        print('No episode found')
     }
 
 def get_recording_counts(title):
