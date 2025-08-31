@@ -58,13 +58,10 @@ def delete_recorded_episodes(title):
 
     for recording in all_recorded_file_info:
         if recording['Title'] == title:
-            return {
-                print(f'Episode found')
-            }
+            print('Episode found')
         else:
-            return {
-                print(f'No episode found')
-            }
+            print('No episode found')
+            
         
     print('No episode found')
 
