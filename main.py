@@ -48,10 +48,19 @@ def get_recorded_episodes(title):
         if recording['Title'] == title:
             episodes = requests.get(recording['EpisodesURL']).json()
             for episode in episodes:
-                unique_recordings.add(episode['CmdURL'])
+                unique_recordings.add(episode['EpisodeNumber'])
             
         for episode_name in unique_recordings:
             print('"' + episode_name + '"')
+
+def delete_recorded_episodes(title):
+    all_recorded_file_info = requests.get(f'http://{url}/recorded_files.json').json()
+
+    unique_recordings = set()
+    
+    for recording in all_recorded_file_info:
+        if recording['EpisodeNumber'] == title:
+            print('"' + recording['CmdURL'] + '"')
 
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
@@ -175,6 +184,11 @@ def main():
             get_recorded_episodes(sys.argv[2])
         except IndexError:
             print(f'Action: {action}, requires a recording name input.')
+    elif action == 'delete_recorded_episodes':
+        try:
+            get_recorded_episodes(sys.argv[2])
+        except IndexError:
+            print(f'Action: {action}, requires a recording name input.')        
     elif action == 'get_storage_details':
         get_storage_details()
     elif action == 'get_capacity_info':
