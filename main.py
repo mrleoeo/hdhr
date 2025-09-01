@@ -62,7 +62,7 @@ def delete_recorded_episodes(title):
             try:
                 episode['EpisodeNumber'] == title
                 print('Episode found')
-                raise_for_status()
+                raise
             except KeyError:
                 print('No episode found ' + episode['EpisodeNumber'] + ' ' + title)
                 raise
