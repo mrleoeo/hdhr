@@ -59,7 +59,7 @@ def delete_recorded_episodes(title):
     for recording in all_recorded_file_info:
         print('Recording found ' + recording['EpisodesURL'])
         for episode in requests.get(recording['EpisodesURL']).json():
-            if episode['EpisodeNumber'] == title:
+            try episode['EpisodeNumber'] == title:
                 print('Episode found')
                 break
             except KeyError:
