@@ -62,9 +62,10 @@ def delete_recorded_episodes(title):
             try:
                 episode['EpisodeNumber'] == title
                 print('Episode found')
-                break
+                response.raise_for_status()
             except KeyError:
                 print('No episode found ' + episode['EpisodeNumber'] + ' ' + title)
+                raise
 
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
