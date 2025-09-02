@@ -82,7 +82,7 @@ def get_recordings_details():
         for episode in episodes:
             number_recordings += 1
             
-        print(f'Recording ' + recording['Title'] + 'has ' + {number_recordings} + ' recordings.')
+        print(f'Recording ' + recording['Title'] + 'has {number_recordings} recordings.')
 
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
