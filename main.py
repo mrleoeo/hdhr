@@ -67,8 +67,11 @@ def delete_recorded_episodes(title):
                     print('Episode deleted ' + episode['Filename'])
                     response.raise_for_status()
                 except Exception:
-                    print(f'Deleted {deleted_count} recording(s) of {title} before error.')
+                    print(f'Deleted {deleted_count} recording(s) before error.')
                     raise
+                deleted_count += 1
+    
+    print(f'Deleted {deleted_count} recording(s) of {title}.')
             #else:
                 #print('No episode found ' + episode['Filename'] + ' ' + title)
 
