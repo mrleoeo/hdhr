@@ -73,6 +73,17 @@ def delete_recorded_episodes(title):
     
     print(f'Deleted {deleted_count} recording(s) of {title}.')
 
+def get_recordings_details():
+    all_recorded_file_info = requests.get(f'http://{url}/recorded_files.json').json()
+
+    for recording in all_recorded_file_info:
+        number_recordings = 0
+        episodes = requests.get(recording['EpisodesURL']).json()
+        for episode in episodes:
+            number_recordings += 1
+            
+        print(recording['Title'] + 'has ' + number_recordings + ' recordings.')
+
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
     gb = None
@@ -209,6 +220,8 @@ def main():
             get_recording_counts(sys.argv[2])
         except IndexError:
             print(f'Action: {action}, requires a recording name input.')
+    elif action == 'get_recordings_details':
+        print(json.dumps(get_recordings_details()))
     else:
         print(f'Action: {action}, is not implemented.')
 
