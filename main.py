@@ -60,11 +60,9 @@ def delete_recorded_episodes(title):
     deleted_count = 0
 
     for recording in all_recorded_file_info:
-        #print('Recording found ' + recording['EpisodesURL'])
         for episode in requests.get(recording['EpisodesURL']).json():
             if episode['Filename'] == title:
                 try:
-                    # https://info.hdhomerun.com/info/dvr_api:deleting_recordings
                     response = requests.post(url=episode['CmdURL'], params={'cmd':'delete', 'rerecord':'1'})
                     print('Episode deleted ' + episode['Filename'])
                     response.raise_for_status()
@@ -74,8 +72,6 @@ def delete_recorded_episodes(title):
                 deleted_count += 1
     
     print(f'Deleted {deleted_count} recording(s) of {title}.')
-            #else:
-                #print('No episode found ' + episode['Filename'] + ' ' + title)
 
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
