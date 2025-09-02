@@ -101,7 +101,7 @@ def get_recording_counts(title):
         
             for episode in episodes:
                 try:
-                    full_episode_number = episode['EpisodeNumber']
+                    full_episode_number = episode['Filename']
                     s = int(full_episode_number.split('S')[1].split('E')[0])
 
                     if s in recorded:
