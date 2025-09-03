@@ -87,7 +87,7 @@ def get_recordings_details():
         summary.append((str(number_recordings) + ' recordings of ' + recording['Title'] + '\n'))
         #print(recording['Title'] + f' has: \n {number_recordings} recordings.')
     sorted_summary = sorted(summary,reverse=True)
-    for sorted_recording in sorted_summary
+    for sorted_recording in sorted_summary:
         print(sorted_recording)
     
 def get_recording_counts(title):
