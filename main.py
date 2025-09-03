@@ -85,7 +85,7 @@ def get_recordings_details():
         for episode in episodes:
             number_recordings += 1
         #summary.extend([recording['Title'],{number_recordings}])
-        print(recording['Title'] + f' has {number_recordings} recordings.')
+        print(recording['Title'] + f' has: \n {number_recordings} recordings.')
     #sorted_summary = sorted(summary, key=itemgetter(1,0))#, reverse=True)
     #print(sorted_summary)
     
