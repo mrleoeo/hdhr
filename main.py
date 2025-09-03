@@ -78,6 +78,7 @@ def get_recordings_details():
     all_recorded_file_info = requests.get(f'http://{url}/recorded_files.json').json()
 
     summary = []
+    sorted_recording = 0
 
     for recording in all_recorded_file_info:
         number_recordings = 0
@@ -87,7 +88,9 @@ def get_recordings_details():
         summary.append((str(number_recordings) + ' recordings of ' + recording['Title'] + '\n'))
         #print(recording['Title'] + f' has: \n {number_recordings} recordings.')
     sorted_summary = sorted(summary,reverse=True)
-    print(sorted_summary)
+    for sorted_recording in sorted_summary
+        print(sorted_recording[sorted_recording])
+        sorted_recording +=1
     
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
