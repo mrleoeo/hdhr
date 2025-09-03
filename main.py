@@ -85,7 +85,9 @@ def get_recordings_details():
             number_recordings += 1
         summary.extend([recording['Title'],{number_recordings}])
         #print(recording['Title'] + f' has {number_recordings} recordings.')
-    print(summary)
+    sorted_summary = sorted(summary, key=itemgetter(1), reverse=True)
+    print(sorted_summary)
+    
 def get_recording_counts(title):
     recordings = requests.get(f'http://{url}/recorded_files.json').json()
     gb = None
