@@ -86,7 +86,7 @@ def get_recordings_details():
             number_recordings += 1
         summary.extend([recording['Title'],{number_recordings}])
         #print(recording['Title'] + f' has {number_recordings} recordings.')
-    sorted_summary = sorted(summary, key=operator.itemgetter(1), reverse=True)
+    sorted_summary = sorted(summary, key=itemgetter(1), reverse=True)
     print(sorted_summary)
     
 def get_recording_counts(title):
