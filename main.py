@@ -84,9 +84,9 @@ def get_recordings_details():
         episodes = requests.get(recording['EpisodesURL']).json()
         for episode in episodes:
             number_recordings += 1
-        summary.extend([{number_recordings}:recording['Title']])
+        summary.extend([{number_recordings},recording['Title']])
         #print(recording['Title'] + f' has: \n {number_recordings} recordings.')
-    sorted_summary = sorted(summary, itemgetter(0))
+    sorted_summary = sorted(summary)
     print(sorted_summary)
     
 def get_recording_counts(title):
