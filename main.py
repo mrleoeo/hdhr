@@ -84,7 +84,7 @@ def get_recordings_details():
         episodes = requests.get(recording['EpisodesURL']).json()
         for episode in episodes:
             number_recordings += 1
-        summary.append((str(number_recordings) + ' recordings of ' + recording['Title'] + '\n'))
+        summary.append((str(number_recordings) + ' recordings of ' + recording['Title'])
         #print(recording['Title'] + f' has: \n {number_recordings} recordings.')
     sorted_summary = sorted(summary,reverse=True)
     for sorted_recording in sorted_summary:
