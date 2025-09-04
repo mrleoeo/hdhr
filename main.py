@@ -3,7 +3,6 @@ import math
 import os
 import requests
 import sys
-from operator import itemgetter
 
 url = os.environ["HDHR_LOCAL_URL"]
 
